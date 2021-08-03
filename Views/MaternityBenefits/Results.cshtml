@@ -34,8 +34,8 @@
             <tbody>
                 <tr>
                     <td><b>@TextSet.Get("max_weekly_amount_label")</b></td>
-                    <td class="text-center">@String.Format("{0:C2}", baseCase.MaxWeeklyAmount, cn)</td>
-                    <td class="text-center">@String.Format("{0:C2}", variantCase.MaxWeeklyAmount, cn)</td>
+                    <td class="text-center">@String.Format(cn, "{0:C2}", baseCase.MaxWeeklyAmount)</td>
+                    <td class="text-center">@String.Format(cn, "{0:C2}", variantCase.MaxWeeklyAmount)</td>
                 </tr>
                 <tr>
                     <td><b>@TextSet.Get("percentage_label")</b></td>
@@ -62,7 +62,7 @@
             <dt class="col-sm-5">@TextSet.Get("percent_cost_change_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentChangeInCost)</dd>
             <dt class="col-sm-5">@TextSet.Get("avg_change_label")</dt>
-            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountChange, cn)</dd>
+            <dd class="col-sm-7">@String.Format(cn, "{0:C2}", summary.AverageAmountChange)</dd>
             <dt class="col-sm-5">@TextSet.Get("avg_percent_change_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentChange)</dd>
         </dl>
@@ -77,7 +77,7 @@
             <dt class="col-sm-5">@TextSet.Get("percent_gainers_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentThatGained)</dd>
             <dt class="col-sm-5">@TextSet.Get("avg_gain_label")</dt>
-            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountGained, cn)</dd>
+            <dd class="col-sm-7">@String.Format(cn, "{0:C2}", summary.AverageAmountGained)</dd>
             <dt class="col-sm-5">@TextSet.Get("avg_percent_gain_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentGained)</dd>
         </dl>
@@ -91,7 +91,7 @@
             <dt class="col-sm-5">@TextSet.Get("percent_losers_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentThatLost)</dd>
             <dt class="col-sm-5">@TextSet.Get("avg_loss_label")</dt>
-            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountLost, cn)</dd>
+            <dd class="col-sm-7">@String.Format(cn, "{0:C2}", summary.AverageAmountLost)</dd>
             <dt class="col-sm-5">@TextSet.Get("avg_percent_loss_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentLost)</dd>
         </dl>
@@ -122,7 +122,7 @@
                         <td>@TextSet.Get(x)</td>
                         <td>@agg.TotalCountsDict[x]</td>
                         <td>@String.Format("{0:n0}%", agg.TotalPercentsDict[x])</td>
-                        <td>@String.Format("{0:C2}", agg.AverageAmountChangeDict[x], cn)</td>
+                        <td>@String.Format(cn, "{0:C2}", agg.AverageAmountChangeDict[x])</td>
                         <td>@String.Format("{0:n1}%", agg.AveragePercentChangeDict[x])</td>
                         <td>@String.Format("{0:n1}%", agg.PercentThatGainedDict[x])</td>
                         <td>@String.Format("{0:n1}%", agg.PercentThatLostDict[x])</td>
