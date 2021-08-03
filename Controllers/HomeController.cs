@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 using babel_web_app.Models;
 
 namespace babel_web_app.Controllers
@@ -18,20 +17,27 @@ namespace babel_web_app.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        [LanguageFilter]
+        public IActionResult Index(string lang)
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            var language = GetLanguage(lang);
+            var viewModel = new IndexViewModel(language);
+            return View(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(string lang)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var language = GetLanguage(lang);
+            return View(new ErrorViewModel(language) { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private string GetLanguage(string parmLang) {
+            string result = parmLang;
+            if (HttpContext.Session.TryGetValue("lang", out byte[] res)) {
+                result = Encoding.UTF8.GetString(res);
+            }
+            return result;
         }
     }
 }

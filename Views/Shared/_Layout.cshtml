@@ -1,9 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@model BaseViewModel
+@{
+    var TextSet = Model.TextSet;
+}
+
+<!DOCTYPE html>
+<html lang="@Model.Language">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maternity Benefits Simulator</title>
+    <title>@TextSet.Get("title")</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
@@ -27,13 +32,21 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="MaternityBenefits" asp-action="Form">New Simulation</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="MaternityBenefits" asp-action="Form">@TextSet.Get("new_simulation")</a>
                         </li>
                     </ul>
+                    <span class="navbar-text">
+                    @if (@Model.Language == "en") {
+                        <a class="float-right nav-link text-light" href="?lang=fr">Francais</a>
+                    } else {
+                        <a class="float-right nav-link text-light" href="?lang=en">English</a>
+                    }
+                    </span>
                 </div>
+
             </div>
         </nav>
     </header>

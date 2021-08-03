@@ -1,42 +1,49 @@
-﻿@using babel_web_app.Lib.Results;
-@model ResultsSummary
+﻿@using System.Globalization;
+@using babel_web_app.Lib.Results;
+@model ResultsViewModel
 
 @{
-    var baseCase = Model.Simulation.BaseCase;
-    var variantCase = Model.Simulation.VariantCase;
-    var summary = Model.OverallSummary;
+    var resultsSummary = Model.Results;
+    var TextSet = Model.TextSet;
+    var baseCase = resultsSummary.Simulation.BaseCase;
+    var variantCase = resultsSummary.Simulation.VariantCase;
+    var summary = resultsSummary.OverallSummary;
+    var aggregations = resultsSummary.Aggregations;
+
+    // Culture name
+    var cn = CultureInfo.GetCultureInfo("en-CA");
 }
 
-<h1>Policy Difference Engine Demo</h1>
-<p>Policy-making is complex. The Policy Difference Engine is an experiment that looks at potentially predicting at where impacts might be felt along regional or demographic lines if a policy change was to be made. This demo lets you model three possible changes that could be made to a particular policy.</p>
+<h1>@TextSet.Get("title")</h1>
+<p>@TextSet.Get("info")</p>
 
 <div class="panel" id="content">
-    <h2>Step 2. Simulation results</h2>
-    <p>You changed some variables, and we created a simulated population of 100 individuals using mock data to show you who might be impacted by your changes. Try exploring the data here, or download for the tool of your choice.</p>
+    <h2>@TextSet.Get("simulation_results_title")</h2>
+    <p>@TextSet.Get("simulation_results_info")</p>
     <hr class="full"/>
 
     <!-- Base and Variant Case -->
     <div>
-        <h3>Your Changes</h3>
+        <h3>@TextSet.Get("your_changes_title")</h3>
         <table class="table">
             <thead>
                 <th scope="col"></th>
-                <th scope="col" class="text-center">Original Value</th>
-                <th scope="col" class="text-center">Proposed Change</th>
+                <th scope="col" class="text-center">@TextSet.Get("original_value_header")</th>
+                <th scope="col" class="text-center">@TextSet.Get("proposed_change_header")</th>
             </thead>
             <tbody>
                 <tr>
-                    <td><b>Maximum Weekly Amount</b></td>
-                    <td class="text-center">@String.Format("{0:C2}", baseCase.MaxWeeklyAmount)</td>
-                    <td class="text-center">@String.Format("{0:C2}", variantCase.MaxWeeklyAmount)</td>
+                    <td><b>@TextSet.Get("max_weekly_amount_label")</b></td>
+                    <td class="text-center">@String.Format("{0:C2}", baseCase.MaxWeeklyAmount, cn)</td>
+                    <td class="text-center">@String.Format("{0:C2}", variantCase.MaxWeeklyAmount, cn)</td>
                 </tr>
                 <tr>
-                    <td><b>Percentage of Average Income</b></td>
+                    <td><b>@TextSet.Get("percentage_label")</b></td>
                     <td class="text-center">@String.Format("{0:N0}%", baseCase.Percentage)</td>
                     <td class="text-center">@String.Format("{0:N0}%", variantCase.Percentage)</td>
                 </tr>
                 <tr>
-                    <td><b>Number of Eligible Weeks</b></td>
+                    <td><b>@TextSet.Get("num_weeks_label")</b></td>
                     <td class="text-center">@baseCase.NumWeeks</td>
                     <td class="text-center">@variantCase.NumWeeks</td>
                 </tr>
@@ -48,15 +55,15 @@
 
     <!-- Overall results -->
     <div>
-        <h3>Overall Results</h3>
+        <h3>@TextSet.Get("overall_results_title")</h3>
         <dl class="row">
-            <dt class="col-sm-5">Sample Size</dt>
+            <dt class="col-sm-5">@TextSet.Get("sample_size_label")</dt>
             <dd class="col-sm-7">@summary.SampleSize</dd>
-            <dt class="col-sm-5">Percent Change in Cost</dt>
+            <dt class="col-sm-5">@TextSet.Get("percent_cost_change_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentChangeInCost)</dd>
-            <dt class="col-sm-5">Average Entitlement Change</dt>
-            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountChange)</dd>
-            <dt class="col-sm-5">Average Percent Change</dt>
+            <dt class="col-sm-5">@TextSet.Get("avg_change_label")</dt>
+            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountChange, cn)</dd>
+            <dt class="col-sm-5">@TextSet.Get("avg_percent_change_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentChange)</dd>
         </dl>
     </div>
@@ -65,13 +72,13 @@
 
     <!-- Gained -->
     <div>
-        <h3>People Who Gained Money</h3>
+        <h3>@TextSet.Get("gainers_title")</h3>
         <dl class="row">
-            <dt class="col-sm-5">Percent of Sample that Gained Money</dt>
+            <dt class="col-sm-5">@TextSet.Get("percent_gainers_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentThatGained)</dd>
-            <dt class="col-sm-5">Average Entitlement Gain</dt>
-            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountGained)</dd>
-            <dt class="col-sm-5">Average Percent Gain</dt>
+            <dt class="col-sm-5">@TextSet.Get("avg_gain_label")</dt>
+            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountGained, cn)</dd>
+            <dt class="col-sm-5">@TextSet.Get("avg_percent_gain_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentGained)</dd>
         </dl>
     </div>
@@ -79,43 +86,43 @@
 
     <!-- Lost -->
     <div>
-        <h3>People Who Lost Money</h3>
+        <h3>@TextSet.Get("losers_title")</h3>
         <dl class="row">
-            <dt class="col-sm-5">Percent of Sample that Lost Money</dt>
+            <dt class="col-sm-5">@TextSet.Get("percent_losers_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentThatLost)</dd>
-            <dt class="col-sm-5">Average Entitlement Lost</dt>
-            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountLost)</dd>
-            <dt class="col-sm-5">Average Percent Lost</dt>
+            <dt class="col-sm-5">@TextSet.Get("avg_loss_label")</dt>
+            <dd class="col-sm-7">@String.Format("{0:C2}", summary.AverageAmountLost, cn)</dd>
+            <dt class="col-sm-5">@TextSet.Get("avg_percent_loss_label")</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentLost)</dd>
         </dl>
     </div>
     <hr class="full"/>
 
-    @foreach (var aggSet in Model.Aggregations) {
+    @foreach (var aggSet in aggregations) {
         var agg = aggSet.Value;
 
     <div>
-        <h3>Aggregation by @aggSet.Key</h3>
+        <h3>@TextSet.Get("agg_aggregation_by_title") @TextSet.Get(@aggSet.Key)</h3> <!-- Translate?-->
         <table class="table aggregation-table">
             <thead>
                 <tr>
-                    <th>Group</th>
-                    <th>Sample Size</th>
-                    <th>Sample Percent</th>
-                    <th>Average Entitlement Change</th>
-                    <th>Average Percent Change</th>
-                    <th>Percent that Gained</th>
-                    <th>Percent that Lost</th>
-                    <th>Percent Unchanged</th> 
+                    <th>@TextSet.Get("agg_group_header")</th>
+                    <th>@TextSet.Get("agg_sample_size_header")</th>
+                    <th>@TextSet.Get("agg_sample_percent_header")</th>
+                    <th>@TextSet.Get("agg_avg_change_header")</th>
+                    <th>@TextSet.Get("agg_avg_percent_change_header")</th>
+                    <th>@TextSet.Get("agg_percent_gained_header")</th>
+                    <th>@TextSet.Get("agg_percent_lost_header")</th>
+                    <th>@TextSet.Get("agg_percent_unchanged_header")</th> 
                 </tr>
             </thead>
             <tbody>
                 @foreach (var x in agg.GroupKeys) {
                     <tr>
-                        <td>@x</td>
+                        <td>@TextSet.Get(x)</td>
                         <td>@agg.TotalCountsDict[x]</td>
                         <td>@String.Format("{0:n0}%", agg.TotalPercentsDict[x])</td>
-                        <td>@String.Format("{0:C2}", agg.AverageAmountChangeDict[x])</td>
+                        <td>@String.Format("{0:C2}", agg.AverageAmountChangeDict[x], cn)</td>
                         <td>@String.Format("{0:n1}%", agg.AveragePercentChangeDict[x])</td>
                         <td>@String.Format("{0:n1}%", agg.PercentThatGainedDict[x])</td>
                         <td>@String.Format("{0:n1}%", agg.PercentThatLostDict[x])</td>
