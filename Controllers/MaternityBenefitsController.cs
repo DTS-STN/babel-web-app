@@ -71,8 +71,7 @@ namespace babel_web_app.Controllers
         public IActionResult RunSim(SimulationFormViewModel formViewModel)
         {
             if (ModelState.IsValid) {
-                CreateSimulationRequest simulationRequest = Convert(formViewModel);
-                
+                CreateSimulationRequest simulationRequest = Convert(formViewModel);    
                 try {
                     var result = _handler.CreateNewSimulation(simulationRequest);
                     var id = result.Id;
@@ -82,7 +81,7 @@ namespace babel_web_app.Controllers
                     return RedirectToAction("Error", new { message = ex.Message });
                 }
             }
-            return View("Form");
+            return View("Form", formViewModel);
         }
 
         [LanguageFilter]

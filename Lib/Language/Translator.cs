@@ -108,7 +108,7 @@ namespace babel_web_app.Lib.Language
             {
                 "run_simulation_text",
                 new LanguageBit(
-                    "Run my Simulation",
+                    "Run Simulation",
                     "Run my Simulation"
                 )
             },

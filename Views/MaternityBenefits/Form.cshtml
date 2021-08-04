@@ -1,79 +1,85 @@
 ﻿@using babel_web_app.Models;
 @model SimulationFormViewModel
-
 @{
     var TextSet = Model.TextSet;
 }
 
 <div>
-    <h1>@TextSet.Get("title")</h1>
-    <p>@TextSet.Get("info")</p>
-    <div class="panel" id="content">
-        <h2>@TextSet.Get("form_title")</h2>
-        <p>@TextSet.Get("form_info")</p>
-        <br/>
-
-
-        <div>
-            <form asp-action="RunSim">
-                <!-- Need the hidden fields? -->
+    <div class="row">
+        <div class="col-md-12">
+            <h3>@TextSet.Get("form_title")</h3>
+            <p>@TextSet.Get("form_info")</p>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="RunSim" class="form-horizontal" id="mat-ben-form">
                 <input type="hidden" asp-for="SimulationName"/>
                 <input type="hidden" asp-for="BaseCase.MaxWeeklyAmount"/>
                 <input type="hidden" asp-for="BaseCase.Percentage"/>
                 <input type="hidden" asp-for="BaseCase.NumWeeks"/>
 
-                <div class="row">
-                    <!-- Max weekly amount -->
-                    <div class="col">
-                        <div class="form-group">
-                            <label asp-for="VariantCase.MaxWeeklyAmount">
-                                @TextSet.Get("max_weekly_amount_label")
-                            </label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">$</div>
-                                </div>
-                                <input type="text" class="form-control" asp-for="VariantCase.MaxWeeklyAmount"/>
-                            </div>
-                            <span class="text-danger" asp-validation-for="VariantCase.MaxWeeklyAmount"></span>
-                        </div>
+                <!-- Max weekly amount -->
+                <div class="form-group">
+                    <label asp-for="VariantCase.MaxWeeklyAmount" class="col-sm-6 control-label">
+                        @TextSet.Get("max_weekly_amount_label")
+                    </label>
+                    <div class="col-sm-6">
+                        <input id="form-max-weekly-amount" type="text" class="form-control" asp-for="VariantCase.MaxWeeklyAmount"/>
+                        <span class="text-danger" asp-validation-for="VariantCase.MaxWeeklyAmount"></span>
                     </div>
+                </div>
 
-                    <!-- Percentage -->
-                    <div class="col">
-                        <div class="form-group">
-                            <label asp-for="VariantCase.Percentage">
-                                @TextSet.Get("percentage_label")
-                            </label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" asp-for="VariantCase.Percentage"/>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">%</span>
-                                </div>
-                            </div>
-                            <span class="text-danger" asp-validation-for="VariantCase.Percentage"></span>
-                        </div>
+                <!-- Percentage -->
+                <div class="form-group">
+                    <label asp-for="VariantCase.Percentage" class="col-sm-6 control-label">
+                        @TextSet.Get("percentage_label")
+                    </label>
+                    <div class="col-sm-6">
+                        <input id="form-percentage" type="text" class="form-control" asp-for="VariantCase.Percentage"/>
+                        <span class="text-danger" asp-validation-for="VariantCase.Percentage"></span>
                     </div>
+                </div>
 
-                    <!-- Num weeks -->
-                    <div class="col">
-                        <div class="form-group">
-                            <label asp-for="VariantCase.NumWeeks" data-toggle="tooltip" data-placement="right" title=@TextSet.Get("num_weeks_description")>
-                                @TextSet.Get("num_weeks_label")
-                            </label>
-                            <input type="text" class="form-control" asp-for="VariantCase.NumWeeks"/>
-                            <span class="text-danger" asp-validation-for="VariantCase.NumWeeks"></span>
+                <!-- Num weeks -->
+                <div class="form-group">
+                    <label asp-for="VariantCase.NumWeeks" class="col-sm-6 control-label" data-toggle="tooltip" data-placement="right" title=@TextSet.Get("num_weeks_description")>
+                        @TextSet.Get("num_weeks_label")
+                    </label>
+                    <div class="col-sm-6">
+                        <input id="form-num-weeks" type="text" class="form-control" asp-for="VariantCase.NumWeeks"/>
+                        <span class="text-danger" asp-validation-for="VariantCase.NumWeeks"></span>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-group">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6">
+                        <div class="btn-group">
+                            <button type="button" onclick="resetFields();" class="btn btn-default">@TextSet.Get("reset_fields_button")</a>
+                            <button type="submit" class="btn btn-success">@TextSet.Get("run_simulation_text")</button>
                         </div>
                     </div>
                 </div>
-                <br/>
-                <div class="d-flex justify-content-between">
-                    <!-- TODO: Make this work... jquery -->
-                    <button type="button" disabled class="btn btn-default">@TextSet.Get("reset_fields_button")</a>
-                    <button type="submit" class="btn btn-primary">@TextSet.Get("run_simulation_text")</button>
-                </div>
-                <br/><br/> 
             </form>
         </div>
     </div>
+    <br/>
 </div>
+
+<script>
+function resetFields() {
+    var form = $("#mat-ben-form");
+
+    var defaultMax = 595;
+    var defaultPercentage = 55;
+    var defaultNumWeeks = 15;
+
+    $(form).find("#form-max-weekly-amount").val(defaultMax);
+    $(form).find("#form-percentage").val(defaultPercentage);
+    $(form).find("#form-num-weeks").val(defaultNumWeeks);
+}
+</script>
+
