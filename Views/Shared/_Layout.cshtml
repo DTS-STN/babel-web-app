@@ -10,7 +10,7 @@
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
     <title>@TextSet.Get("title")</title>
     <meta content="width=device-width,initial-scale=1" name="viewport">
-    <meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
+    <meta name="description" content=@TextSet.Get("info")>
     @* <link rel="alternate" hreflang="fr" href="content-fr.html"> *@
     <link href="~/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -21,10 +21,10 @@
     <nav>
         <ul id="wb-tphp">
             <li class="wb-slc">
-                <a class="wb-sl" href="#wb-cont">Skip to main content</a>
+                <a class="wb-sl" href="#wb-cont">@TextSet.Get("skip_to_main")</a>
             </li>
             <li class="wb-slc">
-                <a class="wb-sl" href="#wb-info">Skip to "About government"</a>
+                <a class="wb-sl" href="#wb-info">@TextSet.Get("skip_to_about")</a>
             </li>
         </ul>
     </nav>
@@ -41,7 +41,7 @@
         <div id="wb-bnr" class="container">
             <div class="row">
                 <section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
-                    <h2 class="wb-inv">Language selection</h2>
+                    <h2 class="wb-inv">@TextSet.Get("language_selection")</h2>
                     <ul class="list-inline mrgn-bttm-0">
                         <li>
                             @if (@Model.Language == "en") {
@@ -63,21 +63,39 @@
                 </div>
             </div>
         </div>
-        <nav class="gcweb-menu" typeof="SiteNavigationElement">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="" asp-controller="Home" asp-action="Index">@TextSet.Get("home")</a>
+                        </li>
+                        <li>
+                            <a class="" asp-controller="MaternityBenefits" asp-action="Form">@TextSet.Get("new_simulation")</a>
+                        </li>
+                        
+                    </ul>
+                    </div>
+                </div>
+        </nav>
+
+        <!-- Menu currently not shown -->
+        @* <nav class="gcweb-menu" typeof="SiteNavigationElement">
             <div class="container">
-                <h2 class="wb-inv">Menu</h2>
+                <h2 class="wb-inv">@TextSet.Get("menu")</h2>
                 <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
                 <ul role="menu" aria-orientation="vertical" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-en.html">
                     <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/jobs.html">Jobs and the workplace</a></li>
                     <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li> 
                 </ul>
             </div>
-        </nav>
+        </nav> *@
         <nav id="wb-bc" property="breadcrumb">
-            <h2>You are here:</h2>
+            <h2>@TextSet.Get("you_are_here")</h2>
             <div class="container">
                 <ol class="breadcrumb">
-                    <li><a href="https://www.canada.ca/en.html">Canada.ca</a></li>
+                    <li><a href=@TextSet.Get("canada_ca_link")>@TextSet.Get("canada_ca")</a></li>
+                    <li><a href=@TextSet.Get("sc_labs_link")>@TextSet.Get("sc_labs")</a></li>
                 </ol>
             </div>
         </nav>
@@ -88,23 +106,24 @@
             <h2>@TextSet.Get("title")</h2>
             <p>@TextSet.Get("info")</p>
         </div>
+        <hr/>
         @RenderBody()
     </main>
 
     <footer id="wb-info">
         <div class="landscape">
             <nav class="container wb-navcurr">
-                <h2 class="wb-inv">About government</h2>
+                <h2 class="wb-inv">@TextSet.Get("about_government")</h2>
                 <ul class="list-unstyled colcount-sm-2 colcount-md-3">
-                    <li><a href="https://www.canada.ca/en/contact.html">Contact us</a></li>
-                    <li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
-                    <li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and military</a></li>
-                    <li><a href="https://www.canada.ca/en/news.html">News</a></li>
-                    <li><a href="https://www.canada.ca/en/government/system/laws.html">Treaties, laws and regulations</a></li>
-                    <li><a href="https://www.canada.ca/en/transparency/reporting.html">Government-wide reporting</a></li>
-                    <li><a href="https://pm.gc.ca/eng">Prime Minister</a></li>
-                    <li><a href="https://www.canada.ca/en/government/system.html">How government works</a></li>
-                    <li><a href="https://open.canada.ca/en/">Open government</a></li>
+                    <li><a href=@TextSet.Get("contact_us_link")>@TextSet.Get("contact_us")</a></li>
+                    <li><a href=@TextSet.Get("departments_and_agencies_link")>@TextSet.Get("departments_and_agencies")</a></li>
+                    <li><a href=@TextSet.Get("public_service_link")>@TextSet.Get("public_service")</a></li>
+                    <li><a href=@TextSet.Get("news_link")>@TextSet.Get("news")</a></li>
+                    <li><a href=@TextSet.Get("treaties_link")>@TextSet.Get("treaties")</a></li>
+                    <li><a href=@TextSet.Get("reporting_link")>@TextSet.Get("reporting")</a></li>
+                    <li><a href=@TextSet.Get("prime_minister_link")>@TextSet.Get("prime_minister")</a></li>
+                    <li><a href=@TextSet.Get("how_government_works_link")>@TextSet.Get("how_government_works")</a></li>
+                    <li><a href=@TextSet.Get("open_government_link")>@TextSet.Get("open_government")</a></li>
                 </ul>
             </nav>
         </div>
@@ -114,15 +133,14 @@
                     <nav class="col-md-9 col-lg-10 ftr-urlt-lnk">
                         <h2 class="wb-inv">About this site</h2>
                         <ul>
-                            <li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
-                            <li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
-                            <li><a href="https://www1.canada.ca/en/newsite.html">About Canada.ca</a></li>
-                            <li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li>
-                            <li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
+                            <li><a href=@TextSet.Get("social_media_link")>@TextSet.Get("social_media")</a></li>
+                            <li><a href=@TextSet.Get("mobile_apps_link")>@TextSet.Get("mobile_apps")</a></li>
+                            <li><a href=@TextSet.Get("terms_and_conditions_link")>@TextSet.Get("terms_and_conditions")</a></li>
+                            <li><a href=@TextSet.Get("privacy_link")>@TextSet.Get("privacy")</a></li>
                         </ul>
                     </nav>
                     <div class="col-xs-6 visible-sm visible-xs tofpg">
-                        <a href="#wb-cont">Top of page <span class="glyphicon glyphicon-chevron-up"></span></a>
+                        <a href="#wb-cont">@TextSet.Get("top_of_page") <span class="glyphicon glyphicon-chevron-up"></span></a>
                     </div>
                     <div class="col-xs-6 col-md-3 col-lg-2 text-right">
                         <img src="~/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
@@ -141,20 +159,3 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
-
-@* <script>
-$(document).ready( function () {
-    $('#results-table').DataTable({
-        searching: false,
-        pageLength: 100
-    });
-
-    $('.aggregation-table').DataTable({
-        searching: false,
-        pageLength: 100,
-        paging:   false,
-        lengthChange: false,
-        info: false
-    });
-} );
-</script> *@

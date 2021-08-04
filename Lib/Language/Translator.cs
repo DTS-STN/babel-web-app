@@ -17,14 +17,309 @@ namespace babel_web_app.Lib.Language
             _language = language;
         }
 
-        //public string MY_THING => Get("my_thing");
-
+        
+        // TODO: I should separate this into different pieces and then compose the dictionary
+        // Or create separate ones for each page + a global one
         private readonly Dictionary<string, LanguageBit> Dict = new Dictionary<string, LanguageBit> {
+            {
+                "skip_to_main",
+                new LanguageBit(
+                    "Skip to main content", 
+                    "Passer au contenu principal"
+                )
+            },
+            {
+                "skip_to_about",
+                new LanguageBit(
+                    "Skip to \"About government\"", 
+                    "Passer à « Au sujet du gouvernement »"
+                )
+            },
+            {
+                "language_selection",
+                new LanguageBit(
+                    "Language selection", 
+                    "Sélection de la langue"
+                )
+            },
+            {
+                "you_are_here",
+                new LanguageBit(
+                    "You are here :", 
+                    "Vous êtes ici :"
+                )
+            },
+            {
+                "menu",
+                new LanguageBit(
+                    "Menu", 
+                    "Menu"
+                )
+            },
+
+            /*** FOOTER ***/
+            {
+                "about_government",
+                new LanguageBit(
+                    "About Government", 
+                    "À propos du gouvernement"
+                )
+            },
+            {
+                "about_government_link",
+                new LanguageBit(
+                    "About Government", 
+                    "https://www.canada.ca/fr/gouvernement/systeme.html"
+                )
+            },
+            {
+                "contact_us",
+                new LanguageBit(
+                    "Contact us", 
+                    "Contactez-nous"
+                )
+            },
+            {
+                "contact_us_link",
+                new LanguageBit(
+                    "https://alpha.service.canada.ca/about#contact-us",
+                    "https://alpha.service.canada.ca/fr/about#contact-us"
+                )
+            },
+            {
+                "departments_and_agencies",
+                new LanguageBit(
+                    "Departments and agencies", 
+                    "Ministères et organismes"
+                )
+            },
+            {
+                "departments_and_agencies_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/government/dept.html", 
+                    "https://www.canada.ca/fr/gouvernement/min.html"
+                )
+            },
+            {
+                "public_service",
+                new LanguageBit(
+                    "Public service and military", 
+                    "Fonction publique et force militaire"
+                )
+            },
+            {
+                "public_service_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/government/publicservice.html", 
+                    "https://www.canada.ca/fr/gouvernement/fonctionpublique.html"
+                )
+            },
+            {
+                "news",
+                new LanguageBit(
+                    "News", 
+                    "Nouvelles"
+                )
+            },
+            {
+                "news_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/news.html", 
+                    "https://www.canada.ca/fr/nouvelles.html"
+                )
+            },
+            {
+                "treaties",
+                new LanguageBit(
+                    "Treaties, laws and regulations", 
+                    "Traités, lois et règlements"
+                )
+            },
+            {
+                "treaties_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/government/system/laws.html", 
+                    "https://www.canada.ca/fr/gouvernement/systeme/lois.html"
+                )
+            },
+            {
+                "reporting",
+                new LanguageBit(
+                    "Government-wide reporting", 
+                    "Rapports à l’échelle du gouvernement"
+                )
+            },
+            {
+                "reporting_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/transparency/reporting.html", 
+                    "https://www.canada.ca/fr/transparence/rapports.html"
+                )
+            },
+            {
+                "prime_minister",
+                new LanguageBit(
+                    "Prime Minister", 
+                    "Premier ministre"
+                )
+            },
+            {
+                "prime_minister_link",
+                new LanguageBit(
+                    "https://pm.gc.ca/en", 
+                    "https://pm.gc.ca/fr"
+                )
+            },
+            {
+                "how_government_works",
+                new LanguageBit(
+                    "How government works", 
+                    "À propos du gouvernement"
+                )
+            },
+            {
+                "how_government_works_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/government/system.html", 
+                    "https://www.canada.ca/fr/gouvernement/systeme.html"
+                )
+            },
+            {
+                "open_government",
+                new LanguageBit(
+                    "Open government", 
+                    "Gouvernement ouvert"
+                )
+            },
+            {
+                "open_government_link",
+                new LanguageBit(
+                    "https://open.canada.ca/en", 
+                    "https://open.canada.ca/fr"
+                )
+            },
+            {
+                "about_this_site",
+                new LanguageBit(
+                    "About this site", 
+                    "Nouvelle Simulation"
+                )
+            },
+            {
+                "social_media",
+                new LanguageBit(
+                    "Social media", 
+                    "Média sociaux"
+                )
+            },
+            {
+                "social_media_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/social.html", 
+                    "https://www.canada.ca/fr/sociaux.html"
+                )
+            },
+            {
+                "mobile_apps",
+                new LanguageBit(
+                    "Mobile applications", 
+                    "Applications mobiles"
+                )
+            },
+            {
+                "mobile_apps_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/mobile.html", 
+                    "https://www.canada.ca/fr/mobile.html"
+                )
+            },
+            // {
+            //     "about_ca",
+            //     new LanguageBit(
+            //         "About Canada.ca", 
+            //         "Nouvelle Simulation"
+            //     )
+            // },
+            {
+                "terms_and_conditions",
+                new LanguageBit(
+                    "Terms and conditions", 
+                    "Avis"
+                )
+            },
+            {
+                "terms_and_conditions_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/transparency/terms.html", 
+                    "https://www.canada.ca/fr/transparence/avis.html"
+                )
+            },
+            {
+                "privacy",
+                new LanguageBit(
+                    "Privacy", 
+                    "Confidentialité"
+                )
+            },
+            {
+                "privacy_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en/transparency/privacy.html", 
+                    "https://www.canada.ca/fr/transparence/confidentialite.html"
+                )
+            },
+            {
+                "top_of_page",
+                new LanguageBit(
+                    "Top of page", 
+                    "Haut de la page"
+                )
+            },
+
+            /*** Breadcrumbs ***/
+            {
+                "canada_ca",
+                new LanguageBit(
+                    "Canada.ca", 
+                    "Canada.ca"
+                )
+            },
+            {
+                "canada_ca_link",
+                new LanguageBit(
+                    "https://www.canada.ca/en.html", 
+                    "https://www.canada.ca/fr.html"
+                )
+            },
+            {
+                "sc_labs",
+                new LanguageBit(
+                    "Service Canada Labs", 
+                    "Laboratoires de Service Canada"
+                )
+            },
+            {
+                "sc_labs_link",
+                new LanguageBit(
+                    "https://alpha.service.canada.ca/home", 
+                    "https://alpha.service.canada.ca/fr/home"
+                )
+            },
+
+
+
             {
                 "new_simulation",
                 new LanguageBit(
                     "New Simulation", 
                     "Nouvelle Simulation"
+                )
+            },
+            {
+                "home",
+                new LanguageBit(
+                    "Home", 
+                    "Accueil"
                 )
             },
             {

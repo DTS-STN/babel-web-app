@@ -5,12 +5,8 @@
 }
 
 <div>
-    <div class="row">
-        <div class="col-md-12">
-            <h3>@TextSet.Get("form_title")</h3>
-            <p>@TextSet.Get("form_info")</p>
-        </div>
-    </div>
+    <h2>@TextSet.Get("form_title")</h2>
+    <p>@TextSet.Get("form_info")</p>
     <br/>
     <div class="row">
         <div class="col-md-6">
@@ -70,16 +66,16 @@
 </div>
 
 <script>
-function resetFields() {
-    var form = $("#mat-ben-form");
+    function resetFields() {
+        var form = $("#mat-ben-form");
 
-    var defaultMax = 595;
-    var defaultPercentage = 55;
-    var defaultNumWeeks = 15;
+        var defaultMax = 595;
+        var defaultPercentage = 55;
+        var defaultNumWeeks = 15;
 
-    $(form).find("#form-max-weekly-amount").val(defaultMax);
-    $(form).find("#form-percentage").val(defaultPercentage);
-    $(form).find("#form-num-weeks").val(defaultNumWeeks);
-}
+        $(form).find("#form-max-weekly-amount").val(defaultMax);
+        $(form).find("#form-percentage").val(defaultPercentage);
+        $(form).find("#form-num-weeks").val(defaultNumWeeks);
+    }
 </script>
 

@@ -4,8 +4,12 @@
 }
 
 <div>
-     <h2>@TextSet.Get("test_title")</h2>
+    <h2>@TextSet.Get("test_title")</h2>
     <p>@TextSet.Get("test_info1")</p>
     <p>@TextSet.Get("test_info2")</p>
-    <p><a asp-controller="MaternityBenefits" asp-action="Form"  class="btn btn-call-to-action">@TextSet.Get("test_button_text")</a></p>
+    <p>
+        <a asp-controller="MaternityBenefits" asp-action="Form" class="btn btn-call-to-action">
+            @TextSet.Get("test_button_text")
+        </a>
+    </p>
 </div>
