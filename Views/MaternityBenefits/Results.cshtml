@@ -1,9 +1,9 @@
-﻿@using System.Globalization;
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@using System.Globalization;
 @model ResultsViewModel
 
 @{
     var resultsSummary = Model.Results;
-    var TextSet = Model.TextSet;
     var baseCase = resultsSummary.Simulation.BaseCase;
     var variantCase = resultsSummary.Simulation.VariantCase;
     var summary = resultsSummary.OverallSummary;
@@ -13,32 +13,32 @@
     var cn = CultureInfo.GetCultureInfo("en-CA");
 }
 <div>
-    <h2>@TextSet.Get("simulation_results_title")</h2>
-    <p>@TextSet.Get("simulation_results_info")</p>
+    <h2>@localizer["simulation_results_title"]</h2>
+    <p>@localizer["simulation_results_info"]</p>
 </div>
 
 <!-- Base and Variant Case -->
 <div>
     <table class="table">
-        <caption>@TextSet.Get("your_changes_title")</caption>
+        <caption>@localizer["your_changes_title"]</caption>
         <thead>
             <th scope="col"></th>
-            <th scope="col" class="text-center">@TextSet.Get("original_value_header")</th>
-            <th scope="col" class="text-center">@TextSet.Get("proposed_change_header")</th>
+            <th scope="col" class="text-center">@localizer["original_value_header"]</th>
+            <th scope="col" class="text-center">@localizer["proposed_change_header"]</th>
         </thead>
         <tbody>
             <tr>
-                <td><b>@TextSet.Get("max_weekly_amount_label")</b></td>
+                <td><b>@localizer["max_weekly_amount_label"]</b></td>
                 <td class="text-center">@String.Format(cn, "{0:C2}", baseCase.MaxWeeklyAmount)</td>
                 <td class="text-center">@String.Format(cn, "{0:C2}", variantCase.MaxWeeklyAmount)</td>
             </tr>
             <tr>
-                <td><b>@TextSet.Get("percentage_label")</b></td>
+                <td><b>@localizer["percentage_label"]</b></td>
                 <td class="text-center">@String.Format("{0:N0}%", baseCase.Percentage)</td>
                 <td class="text-center">@String.Format("{0:N0}%", variantCase.Percentage)</td>
             </tr>
             <tr>
-                <td><b>@TextSet.Get("num_weeks_label")</b></td>
+                <td><b>@localizer["num_weeks_label"]</b></td>
                 <td class="text-center">@baseCase.NumWeeks</td>
                 <td class="text-center">@variantCase.NumWeeks</td>
             </tr>
@@ -51,18 +51,18 @@
 <!-- Overall results -->
 <div>
     <div class="result-dl-title">
-        <h3>@TextSet.Get("overall_results_title")</h3>
+        <h3>@localizer["overall_results_title"]</h3>
     </div>
     <hr/>
     <div>
         <dl class="row">
-            <dt class="col-sm-5">@TextSet.Get("sample_size_label")</dt>
+            <dt class="col-sm-5">@localizer["sample_size_label"]</dt>
             <dd class="col-sm-7">@summary.SampleSize</dd>
-            <dt class="col-sm-5">@TextSet.Get("percent_cost_change_label")</dt>
+            <dt class="col-sm-5">@localizer["percent_cost_change_label"]</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentChangeInCost)</dd>
-            <dt class="col-sm-5">@TextSet.Get("avg_change_label")</dt>
+            <dt class="col-sm-5">@localizer["avg_change_label"]</dt>
             <dd class="col-sm-7">@String.Format(cn, "{0:C2}", summary.AverageAmountChange)</dd>
-            <dt class="col-sm-5">@TextSet.Get("avg_percent_change_label")</dt>
+            <dt class="col-sm-5">@localizer["avg_percent_change_label"]</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentChange)</dd>
         </dl>
     </div>
@@ -72,16 +72,16 @@
 <!-- Gained -->
 <div>
     <div class="result-dl-title">
-        <h3>@TextSet.Get("gainers_title")</h3>
+        <h3>@localizer["gainers_title"]</h3>
     </div>
     <hr/>
     <div>
         <dl class="row">
-            <dt class="col-sm-5">@TextSet.Get("percent_gainers_label")</dt>
+            <dt class="col-sm-5">@localizer["percent_gainers_label"]</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentThatGained)</dd>
-            <dt class="col-sm-5">@TextSet.Get("avg_gain_label")</dt>
+            <dt class="col-sm-5">@localizer["avg_gain_label"]</dt>
             <dd class="col-sm-7">@String.Format(cn, "{0:C2}", summary.AverageAmountGained)</dd>
-            <dt class="col-sm-5">@TextSet.Get("avg_percent_gain_label")</dt>
+            <dt class="col-sm-5">@localizer["avg_percent_gain_label"]</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentGained)</dd>
         </dl>
     </div>
@@ -92,17 +92,17 @@
 <div>
     <div class="result-dl-title">
         <h3>
-            @TextSet.Get("losers_title")
+            @localizer["losers_title"]
         </h3>
     </div>
     <hr/>
     <div>
         <dl class="row">
-            <dt class="col-sm-5">@TextSet.Get("percent_losers_label")</dt>
+            <dt class="col-sm-5">@localizer["percent_losers_label"]</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.PercentThatLost)</dd>
-            <dt class="col-sm-5">@TextSet.Get("avg_loss_label")</dt>
+            <dt class="col-sm-5">@localizer["avg_loss_label"]</dt>
             <dd class="col-sm-7">@String.Format(cn, "{0:C2}", summary.AverageAmountLost)</dd>
-            <dt class="col-sm-5">@TextSet.Get("avg_percent_loss_label")</dt>
+            <dt class="col-sm-5">@localizer["avg_percent_loss_label"]</dt>
             <dd class="col-sm-7">@String.Format("{0:n1}%", summary.AveragePercentLost)</dd>
         </dl>
     </div>
@@ -113,31 +113,35 @@
     var agg = aggSet.Value;
 
 <div>
+    <div class="result-dl-title">
+        <h3>
+            @localizer["agg_aggregation_by_title"] @localizer[aggSet.Key]
+        </h3>
+    </div>
     <table class="wb-tables table table-striped table-hover aggregation-table" data-wb-tables='{ "searching" : false, "paging": false, "lengthChange": false, "info": false }'>
-        <caption>@TextSet.Get("agg_aggregation_by_title") @TextSet.Get(@aggSet.Key)</caption>
         <thead>
             <tr>
-                <th>@TextSet.Get("agg_group_header")</th>
-                <th>@TextSet.Get("agg_sample_size_header")</th>
-                <th>@TextSet.Get("agg_sample_percent_header")</th>
-                <th>@TextSet.Get("agg_avg_change_header")</th>
-                <th>@TextSet.Get("agg_avg_percent_change_header")</th>
-                <th>@TextSet.Get("agg_percent_gained_header")</th>
-                <th>@TextSet.Get("agg_percent_lost_header")</th>
-                <th>@TextSet.Get("agg_percent_unchanged_header")</th> 
+                <th>@localizer[aggSet.Key]</th>
+                <th class="text-right">@localizer["agg_sample_size_header"]</th>
+                <th class="text-right">@localizer["agg_sample_percent_header"]</th>
+                <th class="text-right">@localizer["agg_avg_change_header"]</th>
+                <th class="text-right">@localizer["agg_avg_percent_change_header"]</th>
+                <th class="text-right">@localizer["agg_percent_gained_header"]</th>
+                <th class="text-right">@localizer["agg_percent_lost_header"]</th>
+                <th class="text-right">@localizer["agg_percent_unchanged_header"]</th> 
             </tr>
         </thead>
         <tbody>
             @foreach (var x in agg.GroupKeys) {
                 <tr>
-                    <td>@TextSet.Get(x)</td>
-                    <td>@agg.TotalCountsDict[x]</td>
-                    <td>@String.Format("{0:n0}%", agg.TotalPercentsDict[x])</td>
-                    <td>@String.Format(cn, "{0:C2}", agg.AverageAmountChangeDict[x])</td>
-                    <td>@String.Format("{0:n1}%", agg.AveragePercentChangeDict[x])</td>
-                    <td>@String.Format("{0:n1}%", agg.PercentThatGainedDict[x])</td>
-                    <td>@String.Format("{0:n1}%", agg.PercentThatLostDict[x])</td>
-                    <td>@String.Format("{0:n1}%", agg.PercentUnchangedDict[x])</td>
+                    <td>@localizer[x]</td>
+                    <td class="text-right">@agg.TotalCountsDict[x]</td>
+                    <td class="text-right">@String.Format("{0:n0}%", agg.TotalPercentsDict[x])</td>
+                    <td class="text-right">@String.Format(cn, "{0:C2}", agg.AverageAmountChangeDict[x])</td>
+                    <td class="text-right">@String.Format("{0:n1}%", agg.AveragePercentChangeDict[x])</td>
+                    <td class="text-right">@String.Format("{0:n1}%", agg.PercentThatGainedDict[x])</td>
+                    <td class="text-right">@String.Format("{0:n1}%", agg.PercentThatLostDict[x])</td>
+                    <td class="text-right">@String.Format("{0:n1}%", agg.PercentUnchangedDict[x])</td>
                 </tr>
             }
         </tbody>

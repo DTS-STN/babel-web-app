@@ -24,12 +24,10 @@ namespace babel_web_app.Controllers
             _powerBiLink = powerBiOptions.Value.Link;
         }
 
-        [LanguageFilter]
-        public IActionResult Index(string admin, string lang)
+        public IActionResult Index(string admin)
         {
-            var language = GetLanguage(lang);
             var results = _handler.GetAllSimulations();
-            var viewModel = new AllSimulationsViewModel(results, language);
+            var viewModel = new AllSimulationsViewModel(results);
             ViewBag.IsAdmin = (admin == "admin");
             return View(viewModel);
         }
@@ -46,11 +44,8 @@ namespace babel_web_app.Controllers
             }
         }
 
-        [LanguageFilter]
-        public IActionResult Form(string lang)
+        public IActionResult Form()
         {
-            var language = GetLanguage(lang);
-
             var baseCase = new SimulationCaseViewModel() {
                 Percentage = 55,
                 NumWeeks = 15,
@@ -63,7 +58,7 @@ namespace babel_web_app.Controllers
             };
             var name = $"Simulation_{DateTime.Now.ToString("yyyyMMddHHmm")}";
             
-            var viewModel = new SimulationFormViewModel(baseCase, variantCase, name, language);
+            var viewModel = new SimulationFormViewModel(baseCase, variantCase, name);
             return View(viewModel);
         }
 
@@ -84,13 +79,11 @@ namespace babel_web_app.Controllers
             return View("Form", formViewModel);
         }
 
-        [LanguageFilter]
-        public IActionResult Results(Guid id, string lang) {
+        public IActionResult Results(Guid id) {
             try {
-                string language = GetLanguage(lang);
                 var simResults = _handler.GetSimulationResults(id);
                 var resultsSummary = new ResultsSummary(simResults.Simulation, simResults.Result.PersonResults);
-                var viewModel = new ResultsViewModel(resultsSummary, language);
+                var viewModel = new ResultsViewModel(resultsSummary);
                 return View(viewModel);
             }
             catch (Exception ex) {
@@ -99,27 +92,11 @@ namespace babel_web_app.Controllers
             }
         }
 
-        [LanguageFilter]
-        public IActionResult Error(string message, string lang)
+        public IActionResult Error(string message)
         {
-            var language = GetLanguage(lang);
-            return View(new ErrorViewModel(language) {
+            return View(new ErrorViewModel() {
                 ErrorMessage = message
             });
-        }
-
-        private string GetLanguage(string parmLang) {
-            try {
-                // May not even need the parm in here. Handled by the filter...
-                string result = parmLang;
-                if (HttpContext.Session.TryGetValue("lang", out byte[] res)) {
-                    result = Encoding.UTF8.GetString(res);
-                }
-                return result;
-            } catch (Exception e) {
-                Console.WriteLine(e.Message);
-                return "en";
-            }
         }
 
         private CreateSimulationRequest Convert(SimulationFormViewModel vm) {

@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using Microsoft.AspNetCore.Localization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Session;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.Extensions.Caching;
+using Microsoft.AspNetCore.Mvc.Razor;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,6 +33,22 @@ namespace babel_web_app
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Localization
+            services.AddLocalization(opt => {opt.ResourcesPath = "Resources";});
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
+            services.Configure<RequestLocalizationOptions>(opt => {
+                var supportedCultures = new List<CultureInfo>() {
+                    new CultureInfo("en"),
+                    new CultureInfo("fr")
+                };
+                opt.DefaultRequestCulture = new RequestCulture("en");
+                opt.SupportedCultures = supportedCultures;
+                opt.SupportedUICultures = supportedCultures;
+            });
+            
+            
             services.AddControllersWithViews();
 
             services.AddScoped<IHandleSimulationRequests, SimulationRequestHandler>();
@@ -52,15 +71,6 @@ namespace babel_web_app
                 Link = powerBiLink
             };
             services.AddSingleton<IOptions<PowerBiOptions>>(x => Options.Create(pbOptions));
-
-            // Session (for language)
-            services.AddDistributedMemoryCache();
-            services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromSeconds(1 * 60 * 60);
-                options.Cookie.HttpOnly = true;
-                options.Cookie.IsEssential = true;
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +93,10 @@ namespace babel_web_app
 
             app.UseAuthorization();
 
-            app.UseSession();
+            // Localization
+            app.UseRequestLocalization(
+                app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value
+            );
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,14 +1,11 @@
-﻿@model ErrorViewModel
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model ErrorViewModel
 
-@{
-    var TextSet = Model.TextSet;
-}
-
-<h1 class="text-danger">@TextSet.Get("error_title")</h1>
-<h2 class="text-danger">@TextSet.Get("error_info")</h2>
+<h1 class="text-danger">@localizer["error_title"]</h1>
+<h2 class="text-danger">@localizer["error_info"]</h2>
 
 @if (!String.IsNullOrEmpty(Model.ErrorMessage)) {
-    <h3>@TextSet.Get("error_message_title")</h3>
+    <h3>@localizer["error_message_title"]</h3>
     <p>
         @Model.ErrorMessage
     </p>

@@ -13,7 +13,7 @@ namespace babel_web_app.Lib.Results.Aggregations
             var lessThan20 = new MyGrouping("0 - 20", personResults.Where(x => x.Person.Age < 20));
             var _20to25 = new MyGrouping("20 - 25", personResults.Where(x => x.Person.Age >= 20 && x.Person.Age < 25));
             var _25to30 = new MyGrouping("25 - 30", personResults.Where(x => x.Person.Age >= 25 && x.Person.Age < 30));
-            var _30to35 = new MyGrouping("30-35", personResults.Where(x => x.Person.Age >= 30 && x.Person.Age < 35));
+            var _30to35 = new MyGrouping("30 - 35", personResults.Where(x => x.Person.Age >= 30 && x.Person.Age < 35));
             var _35to40 = new MyGrouping("35 - 40", personResults.Where(x => x.Person.Age >= 35 && x.Person.Age < 40));
             var over40 = new MyGrouping("40+", personResults.Where(x => x.Person.Age >= 40));
 

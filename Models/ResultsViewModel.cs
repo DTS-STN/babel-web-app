@@ -6,11 +6,11 @@ using babel_web_app.Lib.Results;
 
 namespace babel_web_app.Models
 {
-    public class ResultsViewModel : BaseViewModel
+    public class ResultsViewModel
     {
         public ResultsSummary Results { get; set; }
 
-        public ResultsViewModel(ResultsSummary results, string language) : base(language) {
+        public ResultsViewModel(ResultsSummary results) {
             Results = results;
         }
 

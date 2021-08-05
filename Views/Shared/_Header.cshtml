@@ -1,0 +1,78 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+<!-- TEST SITE HEADER - need some custom styling...? -->
+@* <div class="bg-circle-color">
+    <div class="block sm:flex py-4 layout-container">
+        <span class="font-body text-xs text-circle-color font-extrabold flex-shrink-0 bg-white px-4 py-1 my-auto leading-6">Test site</span>
+        <p class="font-body text-xs mt-5 sm:mt-auto text-white sm:ml-4 pt-1 my-auto lg:pb-1">You cannot apply for services or benefits through this test site. Parts of this site may not work and will change.</p>
+    </div>
+</div> *@
+
+<div id="wb-bnr" class="container">
+    <div class="row">
+        <section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
+            <h2 class="wb-inv">@localizer["language_selection"]</h2>
+            <ul class="list-inline mrgn-bttm-0">
+                <li>
+                    <partial name="_Culture"/>
+                    @* @if (@Model.Language == "en") {
+                        <a href="?culture=fr"><span class="hidden-xs">Français</span></a>
+                    } else {
+                        <a href="?culture=en"><span class="hidden-xs">English</span></a>
+                    } *@
+                </li>
+            </ul>
+        </section>
+        <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" resource="#wb-publisher" typeof="GovernmentOrganization">
+            <a href="https://www.canada.ca/en.html" property="url">
+                <img src="~/GCWeb/assets/sig-blk-en.svg" alt="Government of Canada" property="logo">
+                <span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span>
+            </a>
+            <meta property="name" content="Government of Canada">
+            <meta property="areaServed" typeof="Country" content="Canada">
+            <link property="logo" href="~/GCWeb/assets/wmms-blk.svg">
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        
+        <!-- Nav header -->
+        @* <div class="navbar-header">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">@localizer["title"]</a>
+        </div> *@
+        <!-- Right side of nav -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="" asp-controller="Home" asp-action="Index">@localizer["home"]</a>
+                </li>
+                <li>
+                    <a class="" asp-controller="MaternityBenefits" asp-action="Form">@localizer["new_simulation"]</a>
+                </li>
+                
+            </ul>
+            </div>
+        </div>
+</nav>
+
+<!-- Menu currently not shown -->
+@* <nav class="gcweb-menu" typeof="SiteNavigationElement">
+    <div class="container">
+        <h2 class="wb-inv">@TextSet.Get("menu")</h2>
+        <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+        <ul role="menu" aria-orientation="vertical" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-en.html">
+            <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/jobs.html">Jobs and the workplace</a></li>
+            <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li> 
+        </ul>
+    </div>
+</nav> *@
+<nav id="wb-bc" property="breadcrumb">
+    <h2>@localizer["you_are_here"]</h2>
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href=@localizer["canada_ca_link"]>@localizer["canada_ca"]</a></li>
+            <li><a href=@localizer["sc_labs_link"]>@localizer["sc_labs"]</a></li>
+        </ol>
+    </div>
+</nav>

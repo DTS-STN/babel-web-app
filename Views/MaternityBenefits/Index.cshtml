@@ -1,17 +1,16 @@
 @model AllSimulationsViewModel;
 @{
-    var TextSet = Model.TextSet;
     var Response = Model.Response;
 }
 
 <div>
-    <h4>@TextSet.Get("admin_title")</h4>
+    <h4>Admin</h4>
     <div class="row">
         <table class="table" id="admin-table">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">@TextSet.Get("name_column")</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Date</th>
                     @if (ViewBag.IsAdmin) {
                         <th>Delete</th>

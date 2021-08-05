@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
 using babel_web_app.Models;
 
 namespace babel_web_app.Controllers
@@ -17,27 +17,24 @@ namespace babel_web_app.Controllers
             _logger = logger;
         }
 
-        [LanguageFilter]
-        public IActionResult Index(string lang)
+        public IActionResult Index()
         {
-            var language = GetLanguage(lang);
-            var viewModel = new IndexViewModel(language);
-            return View(viewModel);
+            return View();
+        }
+
+        public IActionResult CultureManagement(string culture, string returnUrl) {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName, 
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.Now.AddDays(10) });
+
+            return LocalRedirect(returnUrl);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error(string lang)
+        public IActionResult Error()
         {
-            var language = GetLanguage(lang);
-            return View(new ErrorViewModel(language) { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        private string GetLanguage(string parmLang) {
-            string result = parmLang;
-            if (HttpContext.Session.TryGetValue("lang", out byte[] res)) {
-                result = Encoding.UTF8.GetString(res);
-            }
-            return result;
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
