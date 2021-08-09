@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="error_title" xml:space="preserve">
-    <value>Error</value>
+    <value>Erreur</value>
     <comment/>
   </data>
   <data name="error_info" xml:space="preserve">
-    <value>Sorry! An error occurred while running the simulation. Please try a new simulation with different values.</value>
+    <value>Désolé ! Une erreur s'est produite lors de l'exécution de la simulation. Veuillez essayer une nouvelle simulation avec des valeurs différentes.</value>
     <comment/>
   </data>
   <data name="error_message_title" xml:space="preserve">
-    <value>Error Message</value>
+    <value>Message d'erreur</value>
     <comment/>
   </data>
 </root>

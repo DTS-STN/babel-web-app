@@ -122,11 +122,11 @@
     <comment/>
   </data>
   <data name="info1" xml:space="preserve">
-    <value>Dans cette simulation, vous êtes un analyste des politiques de développement social. On vous a demandé de fournir des données pour une discussion à venir sur la politique concernant le droit aux prestations de maternité.</value>
+    <value>Dans ce scénario, vous êtes un analyste des politiques de développement social. On vous a demandé de fournir des données pour une future discussion politique sur le droit aux prestations de maternité.</value>
     <comment/>
   </data>
   <data name="info2" xml:space="preserve">
-    <value>À l'aide du moteur de différences de politique, vous pouvez appliquer des changements possibles à une population fictive, et déterminer qui pourrait être affecté et comment. N'oubliez pas qu'il ne s'agit que d'une simulation. Les gens et le changement de politique ne sont pas réels.</value>
+    <value>En utilisant le Moteur de Différence de Politique, vous pouvez appliquer les changements possibles à un échantillon de population et déterminer qui pourrait être affecté et comment. N'oubliez pas qu'il ne s'agit que d'une simulation.</value>
     <comment/>
   </data>
   <data name="test_button" xml:space="preserve">

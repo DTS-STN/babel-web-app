@@ -117,20 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="title" xml:space="preserve">
-    <value>Test the Policy Difference Engine</value>
+  <data name="form_title" xml:space="preserve">
+    <value>Propose a policy adjustment</value>
     <comment/>
   </data>
-  <data name="info1" xml:space="preserve">
-    <value>In this scenario, you are a social development policy analyst. You have been asked to provide data for a future policy discussion on maternity benefits entitlement.</value>
+  <data name="form_info" xml:space="preserve">
+    <value>These values are extracted from the Maternity Benefits entitlement calculation, found in the EI Act. Change any or all of these values and run a simulation to see the potential impact. Remember, this is a sample population of individuals, and the calculations are approximate.</value>
     <comment/>
   </data>
-  <data name="info2" xml:space="preserve">
-    <value>Using the Policy Difference Engine, you can apply possible changes to a fictitious population and determine who might be affected and how. Remember, this is just a simulation. The people are not real and nor is the change in policy.</value>
+  <data name="max_weekly_amount_description" xml:space="preserve">
+    <value>The maximum amount of money a person can receive a week.</value>
     <comment/>
   </data>
-  <data name="test_button" xml:space="preserve">
-    <value>Get Started</value>
+  <data name="max_weekly_amount_label" xml:space="preserve">
+    <value>Maximum Weekly Amount</value>
+    <comment/>
+  </data>
+  <data name="percentage_description" xml:space="preserve">
+    <value>How much of their current salary they can expect to receive if they claim this benefit</value>
+    <comment/>
+  </data>
+  <data name="percentage_label" xml:space="preserve">
+    <value>Percentage of Average Income</value>
+    <comment/>
+  </data>
+  <data name="num_weeks_label" xml:space="preserve">
+    <value>Number of Eligible Weeks</value>
+    <comment/>
+  </data>
+  <data name="num_weeks_description" xml:space="preserve">
+    <value>Number of weeks for which an applicant can claim benefits</value>
+    <comment/>
+  </data>
+  <data name="reset_fields_button" xml:space="preserve">
+    <value>Reset Fields</value>
+    <comment/>
+  </data>
+  <data name="run_simulation_text" xml:space="preserve">
+    <value>Run Simulation</value>
     <comment/>
   </data>
 </root>

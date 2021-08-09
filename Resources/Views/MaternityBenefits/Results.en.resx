@@ -122,7 +122,7 @@
     <comment/>
   </data>
   <data name="simulation_results_info" xml:space="preserve">
-    <value>You changed some variables, and we created a simulated population of 100 ind</value>
+    <value>You've changed some values in the Maternity Benefits calculation.  We ran your proposed changes on a population of sample individuals. This page allows you to explore the aggregated results of your simulation to show which groups might be impacted and how. In this way, the PDE promotes a data-driven approach to policy-making.</value>
     <comment/>
   </data>
   <data name="your_changes_title" xml:space="preserve">
@@ -190,7 +190,7 @@
     <comment/>
   </data>
   <data name="percent_losers_label" xml:space="preserve">
-    <value>Percent of Sample that Lost Mone</value>
+    <value>Percent of Sample that Lost Money</value>
     <comment/>
   </data>
   <data name="avg_loss_label" xml:space="preserve">
@@ -286,7 +286,7 @@
     <comment/>
   </data>
   <data name="New Brunswick" xml:space="preserve">
-    <value>New Brunswick</value>
+    <value>Nouveau Brunswick</value>
     <comment/>
   </data>
   <data name="Yukon" xml:space="preserve">
@@ -323,6 +323,14 @@
   </data>
   <data name="University" xml:space="preserve">
     <value>University</value>
+    <comment/>
+  </data>
+  <data name="Nova Scotia" xml:space="preserve">
+    <value>Nova Scotia</value>
+    <comment/>
+  </data>
+  <data name="parameter_header" xml:space="preserve">
+    <value>Parameter</value>
     <comment/>
   </data>
 </root>

@@ -23,7 +23,7 @@ namespace babel_web_app.Lib
             var response = _client.Post<W>(restRequest);
 
             if (response.StatusCode != System.Net.HttpStatusCode.OK) {
-                throw new SimulationApiException(response.ErrorMessage);
+                throw new SimulationApiException(response.Content);
             }
 
             return response.Data;
@@ -34,7 +34,7 @@ namespace babel_web_app.Lib
             var response = _client.Get<W>(restRequest);
 
             if (response.StatusCode != System.Net.HttpStatusCode.OK) {
-                throw new SimulationApiException(response.ErrorMessage);
+                throw new SimulationApiException(response.Content);
             }
 
             return response.Data;
@@ -45,7 +45,7 @@ namespace babel_web_app.Lib
             var response = _client.Delete(restRequest);
 
             if (response.StatusCode != System.Net.HttpStatusCode.OK) {
-                throw new SimulationApiException(response.ErrorMessage);
+                throw new SimulationApiException(response.Content);
             }
         }
         

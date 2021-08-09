@@ -24,27 +24,7 @@ namespace babel_web_app.Controllers
             _powerBiLink = powerBiOptions.Value.Link;
         }
 
-        public IActionResult Index(string admin)
-        {
-            var results = _handler.GetAllSimulations();
-            var viewModel = new AllSimulationsViewModel(results);
-            ViewBag.IsAdmin = (admin == "admin");
-            return View(viewModel);
-        }
-
-
-        public IActionResult Delete(Guid id) {
-            try {
-                _handler.DeleteSimulation(id);
-                return RedirectToAction("Index");
-            }
-            catch (Exception ex) {
-                var message = String.IsNullOrEmpty(ex.Message) ? "The requested simulation no longer exists." : ex.Message;
-                return RedirectToAction("Error", new { message });
-            }
-        }
-
-        public IActionResult Form()
+        public IActionResult Index()
         {
             var baseCase = new SimulationCaseViewModel() {
                 Percentage = 55,
@@ -63,7 +43,7 @@ namespace babel_web_app.Controllers
         }
 
         [HttpPost]
-        public IActionResult RunSim(SimulationFormViewModel formViewModel)
+        public IActionResult Index(SimulationFormViewModel formViewModel)
         {
             if (ModelState.IsValid) {
                 CreateSimulationRequest simulationRequest = Convert(formViewModel);    
@@ -76,7 +56,7 @@ namespace babel_web_app.Controllers
                     return RedirectToAction("Error", new { message = ex.Message });
                 }
             }
-            return View("Form", formViewModel);
+            return View("Index", formViewModel);
         }
 
         public IActionResult Results(Guid id) {

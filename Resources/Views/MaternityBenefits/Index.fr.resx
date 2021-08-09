@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="form_title" xml:space="preserve">
-    <value>...</value>
+    <value>Proposer un ajustement de la politique</value>
     <comment/>
   </data>
   <data name="form_info" xml:space="preserve">
-    <value>...</value>
+    <value>Ces valeurs sont extraites du calcul du droit aux prestations de maternité, qui se trouve dans la Loi sur l'assurance-emploi. Changez l'une ou l'autre de ces valeurs et faites une simulation pour voir l'impact potentiel. N'oubliez pas qu'il s'agit des personnes incluses dans l'échantillon  et que les calculs sont approximatifs.</value>
     <comment/>
   </data>
   <data name="max_weekly_amount_description" xml:space="preserve">
@@ -150,11 +150,11 @@
     <comment/>
   </data>
   <data name="reset_fields_button" xml:space="preserve">
-    <value>Reset Fields</value>
+    <value>Réinitialiser les champs</value>
     <comment/>
   </data>
   <data name="run_simulation_text" xml:space="preserve">
-    <value>Run Simulation</value>
+    <value>Effectuer simulation</value>
     <comment/>
   </data>
 </root>

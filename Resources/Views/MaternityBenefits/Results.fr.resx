@@ -122,11 +122,11 @@
     <comment/>
   </data>
   <data name="simulation_results_info" xml:space="preserve">
-    <value>You changed some variables, and we created a simulated population of 100 ind</value>
+    <value>Vous avez modifié certaines valeurs dans le calcul des prestations de maternité.  Nous avons exécuté les changements que vous proposez sur une population qui est incluse dans l'échantillons. Cette page vous permet d'explorer les résultats agrégés de votre simulation pour montrer quels groupes pourraient être affectés et comment. De cette manière, le MDP encourage une approche de l'élaboration des politiques basée sur les données.</value>
     <comment/>
   </data>
   <data name="your_changes_title" xml:space="preserve">
-    <value>Your Changes</value>
+    <value>Vos modifications</value>
     <comment/>
   </data>
   <data name="original_value_header" xml:space="preserve">
@@ -138,107 +138,107 @@
     <comment/>
   </data>
   <data name="max_weekly_amount_label" xml:space="preserve">
-    <value>Maximum Weekly Amount</value>
+    <value>Montant hebdomadaire maximum</value>
     <comment/>
   </data>
   <data name="percentage_label" xml:space="preserve">
-    <value>Percentage of Average Income</value>
+    <value>Pourcentage de revenu moyen</value>
     <comment/>
   </data>
   <data name="num_weeks_label" xml:space="preserve">
-    <value>Number of Eligible Weeks</value>
+    <value>Nombre de semaines d'admissibilité</value>
     <comment/>
   </data>
   <data name="overall_results_title" xml:space="preserve">
-    <value>Overall Results</value>
+    <value>Résultats généraux</value>
     <comment/>
   </data>
   <data name="sample_size_label" xml:space="preserve">
-    <value>Sample Size</value>
+    <value>Taille de l'échantillon</value>
     <comment/>
   </data>
   <data name="percent_cost_change_label" xml:space="preserve">
-    <value>Percent Change in Cost</value>
+    <value>Pourcentage de changement dans le coût</value>
     <comment/>
   </data>
   <data name="avg_change_label" xml:space="preserve">
-    <value>Average Entitlement Change</value>
+    <value>Modification Moyenne des Droits</value>
     <comment/>
   </data>
   <data name="avg_percent_change_label" xml:space="preserve">
-    <value>Average Percent Change</value>
+    <value>Variation moyenne en pourcentage</value>
     <comment/>
   </data>
   <data name="gainers_title" xml:space="preserve">
-    <value>People Who Gained Money</value>
+    <value>Gens ayant gagné de l'argent</value>
     <comment/>
   </data>
   <data name="percent_gainers_label" xml:space="preserve">
-    <value>Percent of Sample that Gained Money</value>
+    <value>Pourcentage de l'échantillon qui a gagné de l'argent</value>
     <comment/>
   </data>
   <data name="avg_gain_label" xml:space="preserve">
-    <value>Average Entitlement Gain</value>
+    <value>Gain moyen de droits</value>
     <comment/>
   </data>
   <data name="avg_percent_gain_label" xml:space="preserve">
-    <value>Average Percent Gain</value>
+    <value>Gain moyen en pourcentage</value>
     <comment/>
   </data>
   <data name="losers_title" xml:space="preserve">
-    <value>People Who Lost Money</value>
+    <value>Gens ayant perdu de l'argent</value>
     <comment/>
   </data>
   <data name="percent_losers_label" xml:space="preserve">
-    <value>Percent of Sample that Lost Mone</value>
+    <value>Pourcentage de l'échantillon ayant perdu de l'argent</value>
     <comment/>
   </data>
   <data name="avg_loss_label" xml:space="preserve">
-    <value>Average Entitlement Lost</value>
+    <value>Droit moyen perdu</value>
     <comment/>
   </data>
   <data name="avg_percent_loss_label" xml:space="preserve">
-    <value>Average Percent Lost</value>
+    <value>Pourcentage moyen de perte</value>
     <comment/>
   </data>
   <data name="agg_aggregation_by_title" xml:space="preserve">
-    <value>Aggregation By</value>
+    <value>Agrégation par</value>
     <comment/>
   </data>
   <data name="agg_group_header" xml:space="preserve">
-    <value>Group</value>
+    <value>Groupe</value>
     <comment/>
   </data>
   <data name="agg_sample_size_header" xml:space="preserve">
-    <value>Sample Size</value>
+    <value>Taille de l'échantillon</value>
     <comment/>
   </data>
   <data name="agg_sample_percent_header" xml:space="preserve">
-    <value>Sample Percent</value>
+    <value>Pourcentage de l'échantillon</value>
     <comment/>
   </data>
   <data name="agg_avg_change_header" xml:space="preserve">
-    <value>Average Entitlement Change</value>
+    <value>Modification Moyenne des Droits</value>
     <comment/>
   </data>
   <data name="agg_avg_percent_change_header" xml:space="preserve">
-    <value>Average Percent Change</value>
+    <value>Variation moyenne en pourcentage</value>
     <comment/>
   </data>
   <data name="agg_percent_gained_header" xml:space="preserve">
-    <value>Percent that Gained</value>
+    <value>Pourcentage de gains</value>
     <comment/>
   </data>
   <data name="agg_percent_lost_header" xml:space="preserve">
-    <value>Percent that Lost</value>
+    <value>Pourcentage de pertes</value>
     <comment/>
   </data>
   <data name="agg_percent_unchanged_header" xml:space="preserve">
-    <value>Percent Unchanged</value>
+    <value>Pourcentage inchangé</value>
     <comment/>
   </data>
   <data name="Income" xml:space="preserve">
-    <value>Income</value>
+    <value>Revenu</value>
     <comment/>
   </data>
   <data name="Province" xml:space="preserve">
@@ -246,15 +246,15 @@
     <comment/>
   </data>
   <data name="Age" xml:space="preserve">
-    <value>Age</value>
+    <value>Âge</value>
     <comment/>
   </data>
   <data name="Education" xml:space="preserve">
-    <value>Education</value>
+    <value>Niveau d'éducation</value>
     <comment/>
   </data>
   <data name="British Columbia" xml:space="preserve">
-    <value>British Columbia</value>
+    <value>Colombie-Britannique</value>
     <comment/>
   </data>
   <data name="Alberta" xml:space="preserve">
@@ -274,19 +274,19 @@
     <comment/>
   </data>
   <data name="Quebec" xml:space="preserve">
-    <value>Quebec</value>
+    <value>Québec</value>
     <comment/>
   </data>
   <data name="Newfoundland and Labrador" xml:space="preserve">
-    <value>Newfoundland and Labrador</value>
+    <value>Terre-Neuve et Labrador</value>
     <comment/>
   </data>
   <data name="Prince Edward Island" xml:space="preserve">
-    <value>Prince Edward Island</value>
+    <value>Île-du-Prince-Édouard</value>
     <comment/>
   </data>
   <data name="New Brunswick" xml:space="preserve">
-    <value>New Brunswick</value>
+    <value>Nouveau Brunswick</value>
     <comment/>
   </data>
   <data name="Yukon" xml:space="preserve">
@@ -294,7 +294,7 @@
     <comment/>
   </data>
   <data name="Northwest Territories" xml:space="preserve">
-    <value>Northwest Territories</value>
+    <value>Territoires du Nord-Ouest</value>
     <comment/>
   </data>
   <data name="Nunavut" xml:space="preserve">
@@ -302,27 +302,35 @@
     <comment/>
   </data>
   <data name="Apprenticeship" xml:space="preserve">
-    <value>Apprenticeship</value>
+    <value>Apprentissage</value>
     <comment/>
   </data>
   <data name="College" xml:space="preserve">
-    <value>College</value>
+    <value>Collège</value>
     <comment/>
   </data>
   <data name="Other" xml:space="preserve">
-    <value>Other</value>
+    <value>Autre</value>
     <comment/>
   </data>
   <data name="Primary - Elementary" xml:space="preserve">
-    <value>Primary - Elementary</value>
+    <value>Primaire - élémentaire</value>
     <comment/>
   </data>
   <data name="Secondary - High School" xml:space="preserve">
-    <value>Secondary - High School</value>
+    <value>Secondaire - École secondaire</value>
     <comment/>
   </data>
   <data name="University" xml:space="preserve">
-    <value>University</value>
+    <value>Université</value>
+    <comment/>
+  </data>
+  <data name="Nova Scotia" xml:space="preserve">
+    <value>Nouvelle-Écosse</value>
+    <comment/>
+  </data>
+  <data name="parameter_header" xml:space="preserve">
+    <value>Parameter</value>
     <comment/>
   </data>
 </root>
