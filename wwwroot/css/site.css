@@ -8,6 +8,22 @@
     color:blue !important;
 }
 
+/* Alpha site nav*/
+
+#alpha-banner-text {
+    font-size: 14px;
+}
+
+#alpha-banner-left {
+    float:left;
+    width:10%
+}
+
+#alpha-banner-right {
+    float:right;
+    width:90%
+}
+
 .superHeader {
     padding: 20px 0; 
     background: #093d6b; 
@@ -24,11 +40,11 @@
 }
 
 .superHeader p { 
-    padding:0; 
-    margin:2px 0 0 12px; 
+    padding: 0; 
+    margin: 0 0 0 12px; 
     display: inline-block
 }
-
+/******/
 
 #results-table_wrapper {
     width: 100% !important
@@ -44,8 +60,4 @@
 
 .aggregation-table th {
     font-size: 1.5rem;
-}
-
-#test-site-text {
-    font-size: 13px;
 }
