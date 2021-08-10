@@ -17,16 +17,14 @@
     <link href="~/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="~/GCWeb/css/theme.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
     <noscript><link rel="stylesheet" href="~/wet-boew/css/noscript.min.css" /></noscript>
 </head>
 <body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage">
-    <nav>
+    <nav aria-label="Main">
         <ul id="wb-tphp">
             <li class="wb-slc">
                 <a class="wb-sl" href="#wb-cont">@localizer["skip_to_main"]</a>
-            </li>
-            <li class="wb-slc">
-                <a class="wb-sl" href="#wb-info">@localizer["skip_to_about"]</a>
             </li>
         </ul>
     </nav>
@@ -35,14 +33,14 @@
         <partial name="_Header">
     </header>
 
-    <main property="mainContentOfPage" resource="#wb-main" class="container" typeof="WebPageElement">
+    <main id="wb-cont" property="mainContentOfPage" resource="#wb-main" class="container" typeof="WebPageElement">
         <div>
             <!-- TODO: What do we think of this? -->
-            <h2>@localizer["title"]</h2>
+            <h1>@localizer["title"]</h1>
             <p>@localizer["info"]</p>
             <details>
                 <summary>
-                    <p>More...</p>
+                    <p>@localizer["more"]</p>
                 </summary>
                 <p>@localizer["info2"]</p>
             </details>

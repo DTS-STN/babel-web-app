@@ -16,34 +16,34 @@
 
                 <!-- Max weekly amount -->
                 <div class="form-group">
-                    <label asp-for="VariantCase.MaxWeeklyAmount" class="col-sm-6 control-label" data-toggle="tooltip" data-placement="right" title=@localizer["max_weekly_amount_description"]>
+                    <label asp-for="VariantCase.MaxWeeklyAmount" id="label-max-weekly-amount" class="col-sm-6 control-label" data-toggle="tooltip" data-placement="right" title=@localizer["max_weekly_amount_description"]>
                         @localizer["max_weekly_amount_label"]
                     </label>
                     <div class="col-sm-6">
-                        <input id="form-max-weekly-amount" type="number" class="form-control" asp-for="VariantCase.MaxWeeklyAmount"/>
-                        <span class="text-danger" asp-validation-for="VariantCase.MaxWeeklyAmount"></span>
+                        <input id="form-max-weekly-amount" aria-labelledby="label-max-weekly-amount" type="number" class="form-control" asp-for="VariantCase.MaxWeeklyAmount"/>
+                        <span class="text-danger" aria-role="alert" asp-validation-for="VariantCase.MaxWeeklyAmount"></span>
                     </div>
                 </div>
 
                 <!-- Percentage -->
                 <div class="form-group">
-                    <label asp-for="VariantCase.Percentage" class="col-sm-6 control-label" data-toggle="tooltip" data-placement="right" title=@localizer["percentage_description"]>
+                    <label asp-for="VariantCase.Percentage" id="label-percentage" class="col-sm-6 control-label" data-toggle="tooltip" data-placement="right" title=@localizer["percentage_description"]>
                         @localizer["percentage_label"]
                     </label>
                     <div class="col-sm-6">
-                        <input id="form-percentage" type="number" class="form-control" asp-for="VariantCase.Percentage"/>
-                        <span class="text-danger" asp-validation-for="VariantCase.Percentage"></span>
+                        <input id="form-percentage" aria-labelledby="label-percentage" type="number" class="form-control" asp-for="VariantCase.Percentage"/>
+                        <span class="text-danger" aria-role="alert" asp-validation-for="VariantCase.Percentage"></span>
                     </div>
                 </div>
 
                 <!-- Num weeks -->
                 <div class="form-group">
-                    <label asp-for="VariantCase.NumWeeks" class="col-sm-6 control-label" data-toggle="tooltip" data-placement="right" title=@localizer["num_weeks_description"]>
+                    <label asp-for="VariantCase.NumWeeks" id="label-num-weeks" class="col-sm-6 control-label" data-toggle="tooltip" data-placement="right" title=@localizer["num_weeks_description"]>
                         @localizer["num_weeks_label"]
                     </label>
                     <div class="col-sm-6">
-                        <input id="form-num-weeks" type="number" class="form-control" asp-for="VariantCase.NumWeeks"/>
-                        <span class="text-danger" asp-validation-for="VariantCase.NumWeeks"></span>
+                        <input id="form-num-weeks" aria-labelledby="label-num-weeks" type="number" class="form-control" asp-for="VariantCase.NumWeeks"/>
+                        <span class="text-danger" aria-role="alert" asp-validation-for="VariantCase.NumWeeks"></span>
                     </div>
                 </div>
 

@@ -122,7 +122,7 @@
     <comment/>
   </data>
   <data name="info" xml:space="preserve">
-    <value>Le moteur de différence de politique (MDP) est un outil basé sur des données qui peut contribuer à la recherche et à la conception de politiques. Il mesure l'impact d'un changement proposé à une législation, une réglementation ou une politique gouvernementale. Il permet à l'utilisateur d'entrer un changement proposé, et une simulation de ce changement est ensuite effectuée sur un échantillon de population. Les résultats de la simulation peuvent ensuite être analysés pour en tirer des enseignements. </value>
+    <value>Le moteur de différence de politique (MDP) est un outil basé sur des données qui peut contribuer à la recherche et à la conception de politiques. Il mesure l'impact d'un changement proposé à une législation, une réglementation ou une politique gouvernementale. Il permet à l'utilisateur d'entrer un changement proposé, et une simulation de ce changement est ensuite effectuée sur un échantillon de population. Les résultats de la simulation peuvent ensuite être analysés pour en tirer des enseignements. Les chercheurs en politique sont l'un des principaux utilisateurs de l'EDP. </value>
     <comment/>
   </data>
   <data name="content" xml:space="preserve">
@@ -138,7 +138,11 @@
     <comment/>
   </data>
   <data name="info2" xml:space="preserve">
-    <value>Le MDP est actuellement au stade de prototype. Cette application web simule les changements apportés à la formule de calcul des droits aux prestations de maternité. Les règles d'admissibilité ont été élaborées en collaboration avec des experts en politique, mais elles sont encore inexactes. Les données utilisées ne sont que des échantillons de données. Les résultats obtenus à partir de ce prototype ne doivent pas être pris hors contexte. L'objectif actuel du PDE est de montrer ce qui est possible en utilisant une approche de l'élaboration des politiques basée sur les données.</value>
+    <value>Le MDP est actuellement au stade de prototype. Ce n'est pas un réel service. Cette application web simule les changements apportés à la formule de calcul des droits aux prestations de maternité. Les règles d'admissibilité ont été élaborées en collaboration avec des experts en politique, mais elles sont encore inexactes. Les données utilisées ne sont que des échantillons de données. Les résultats obtenus à partir de ce prototype ne doivent pas être pris hors contexte. L'objectif actuel du PDE est de montrer ce qui est possible en utilisant une approche de l'élaboration des politiques basée sur les données.</value>
+    <comment/>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>En savoir plus sur le moteur de différence de politique</value>
     <comment/>
   </data>
 </root>

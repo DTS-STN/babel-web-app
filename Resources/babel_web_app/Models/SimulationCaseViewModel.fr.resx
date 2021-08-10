@@ -122,7 +122,7 @@
     <comment/>
   </data>
   <data name="PercentageRange" xml:space="preserve">
-    <value>Percentage must be between {1} and {2} (fr)</value>
+    <value>Le pourcentage doit être compris entre {1} et {2}</value>
     <comment/>
   </data>
   <data name="MaxWeeklyAmountRequired" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment/>
   </data>
   <data name="MaxWeeklyAmountRange" xml:space="preserve">
-    <value>Max Weekly Amount must be between {1} and {2}</value>
+    <value>Le montant hebdomadaire maximum doit être compris entre {1} et {2}</value>
     <comment/>
   </data>
   <data name="NumWeeksRequired" xml:space="preserve">
@@ -138,7 +138,7 @@
     <comment/>
   </data>
   <data name="NumWeeksRange" xml:space="preserve">
-    <value>Number of Weeks must be between {1} and {2}</value>
+    <value>Le nombre de semaines doit être compris entre {1} et {2}</value>
     <comment/>
   </data>
 </root>

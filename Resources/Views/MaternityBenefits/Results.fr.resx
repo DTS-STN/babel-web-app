@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="simulation_results_title" xml:space="preserve">
-    <value>Simulation Results</value>
+    <value>Résultats des simulations</value>
     <comment/>
   </data>
   <data name="simulation_results_info" xml:space="preserve">
@@ -130,11 +130,11 @@
     <comment/>
   </data>
   <data name="original_value_header" xml:space="preserve">
-    <value>Original Value</value>
+    <value>Valeur originale</value>
     <comment/>
   </data>
   <data name="proposed_change_header" xml:space="preserve">
-    <value>Proposed Change</value>
+    <value>Valeur proposée</value>
     <comment/>
   </data>
   <data name="max_weekly_amount_label" xml:space="preserve">
@@ -330,7 +330,7 @@
     <comment/>
   </data>
   <data name="parameter_header" xml:space="preserve">
-    <value>Parameter</value>
+    <value>Paramètre</value>
     <comment/>
   </data>
 </root>
