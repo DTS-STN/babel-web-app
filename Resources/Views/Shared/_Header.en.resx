@@ -153,4 +153,12 @@
     <value>Policy Difference Engine</value>
     <comment/>
   </data>
+  <data name="test_site" xml:space="preserve">
+    <value>Test Site</value>
+    <comment/>
+  </data>
+  <data name="test_site_info" xml:space="preserve">
+    <value>You cannot apply for services or benefits through this test site. Parts of this site may not work and will change.</value>
+    <comment/>
+  </data>
 </root>

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
+
 using babel_web_app.Models;
 using babel_web_app.Lib;
 using babel_web_app.Lib.Results;
@@ -13,15 +12,10 @@ namespace babel_web_app.Controllers
     public class MaternityBenefitsController : Controller
     {
         private readonly IHandleSimulationRequests _handler;
-        private readonly string _powerBiLink;
 
-        public MaternityBenefitsController(
-            IHandleSimulationRequests handler,
-            IOptions<PowerBiOptions> powerBiOptions
-        )
+        public MaternityBenefitsController(IHandleSimulationRequests handler)
         {
             _handler = handler;
-            _powerBiLink = powerBiOptions.Value.Link;
         }
 
         public IActionResult Index()
@@ -36,6 +30,7 @@ namespace babel_web_app.Controllers
                 NumWeeks = 15,
                 MaxWeeklyAmount = 595
             };
+
             var name = $"Simulation_{DateTime.Now.ToString("yyyyMMddHHmm")}";
             
             var viewModel = new SimulationFormViewModel(baseCase, variantCase, name);
@@ -93,10 +88,6 @@ namespace babel_web_app.Controllers
                 MaxWeeklyAmount = vm.MaxWeeklyAmount,
                 Percentage = vm.Percentage
             };
-        }
-
-        private string BuildPowerBiLink(SimulationResponse sim) {
-            return $"{_powerBiLink}&filter=MaternityBenefitsSimulation/SimulationName eq '{sim.SimulationName}'";
         }
     }
 }

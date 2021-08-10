@@ -2,7 +2,6 @@ using System;
 using Microsoft.Extensions.Options;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
-using Newtonsoft.Json.Linq;
 
 namespace babel_web_app.Lib
 {

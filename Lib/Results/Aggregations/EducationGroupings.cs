@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,8 +15,5 @@ namespace babel_web_app.Lib.Results.Aggregations
 
             return new MyAggregation(educationGroupings);
         }
-
-
-
     }
 }

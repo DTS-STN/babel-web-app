@@ -28,3 +28,16 @@
     margin:2px 0 0 12px; 
     display: inline-block
 }
+
+
+#results-table_wrapper {
+    width: 100% !important
+}
+
+.result-dl-title {
+    margin-bottom: 25px;
+}
+
+.custom-divider {
+    border-top: 4px solid #eee;
+}

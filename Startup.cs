@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using Microsoft.AspNetCore.Localization;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Session;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Razor;
 
 using Microsoft.Extensions.Configuration;
@@ -63,14 +59,6 @@ namespace babel_web_app
                 Url = simulationUrl
             };
             services.AddSingleton<IOptions<SimulationEngineOptions>>(x => Options.Create(simOptions));
-
-            // Power BI Options
-            var powerBiLink = Configuration["PowerBiOptions:Link"] ?? 
-                Environment.GetEnvironmentVariable("POWER_BI_LINK");
-            var pbOptions = new PowerBiOptions() {
-                Link = powerBiLink
-            };
-            services.AddSingleton<IOptions<PowerBiOptions>>(x => Options.Create(pbOptions));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

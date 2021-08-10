@@ -153,4 +153,12 @@
     <value>Moteur de différence de politique</value>
     <comment/>
   </data>
+  <data name="test_site" xml:space="preserve">
+    <value>Site d’essai</value>
+    <comment/>
+  </data>
+  <data name="test_site_info" xml:space="preserve">
+    <value>Vous ne pouvez pas demander de services ou de prestations par l’intermédiaire de ce site d’essai. Certaines parties du site pourraient ne pas fonctionner et seront modifiées.</value>
+    <comment/>
+  </data>
 </root>

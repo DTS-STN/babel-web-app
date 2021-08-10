@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using esdc_simulation_classes.MaternityBenefits;
-
 namespace babel_web_app.Lib.Results.Aggregations
 {
     public class MyAggregation

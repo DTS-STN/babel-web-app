@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 using babel_web_app.Lib.Results;
 
 namespace babel_web_app.Models
@@ -13,6 +9,5 @@ namespace babel_web_app.Models
         public ResultsViewModel(ResultsSummary results) {
             Results = results;
         }
-
     }
 }
