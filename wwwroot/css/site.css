@@ -9,19 +9,8 @@
 }
 
 /* Alpha site nav*/
-
 #alpha-banner-text {
     font-size: 14px;
-}
-
-#alpha-banner-left {
-    float:left;
-    width:10%
-}
-
-#alpha-banner-right {
-    float:right;
-    width:90%
 }
 
 .superHeader {
@@ -31,12 +20,14 @@
 }
 
 .superHeader span {
-    display:inline-block; 
-    float:left; 
-    font-weight: 500; 
-    color: #093d6b; 
-    background: #fff; 
-    padding: 2px 14px
+    display: block;
+    font-weight: 500;
+    color: #093d6b;
+    background: #fff;
+    padding: 2px 14px;
+    text-align: center;
+    margin: 0 auto 15px auto;
+    max-width: calc(100% - 15px);
 }
 
 .superHeader p { 
