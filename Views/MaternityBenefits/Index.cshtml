@@ -7,7 +7,7 @@
     <p>@localizer["form_info"]</p>
     <br/>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <form asp-action="Index" class="form-horizontal" id="mat-ben-form">
                 <input type="hidden" asp-for="SimulationName"/>
                 <input type="hidden" asp-for="BaseCase.MaxWeeklyAmount"/>
@@ -52,8 +52,8 @@
                     <div class="col-sm-6"></div>
                     <div class="col-sm-6">
                         <div class="btn-group">
-                            <button type="button" onclick="resetFields();" class="btn btn-default">@localizer["reset_fields_button"]</a>
-                            <button type="submit" class="btn btn-success">@localizer["run_simulation_text"]</button>
+                            <button type="button" onclick="resetFields();" class="btn btn-sm btn-default">@localizer["reset_fields_button"]</a>
+                            <button type="submit" class="btn btn-sm btn-success">@localizer["run_simulation_text"]</button>
                         </div>
                     </div>
                 </div>

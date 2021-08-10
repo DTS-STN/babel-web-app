@@ -41,3 +41,11 @@
 .custom-divider {
     border-top: 4px solid #eee;
 }
+
+.aggregation-table th {
+    font-size: 1.5rem;
+}
+
+#test-site-text {
+    font-size: 13px;
+}
