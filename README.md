@@ -32,7 +32,7 @@ The config values (e.g. Simulation Url) are set in the Azure App Service configu
 ## Language and Accessibility
 
 Accessibility is facilitated by following WET-BOEW and GCWeb guidelines:
-- https://wet-boew.github.io/GCWeb/index-en.html
+- https://wet-boew.github.io/wet-boew/index-en.html
 - https://wet-boew.github.io/GCWeb/index-en.html
 
 Bilingualism is done using .NET's built-in localization framework. Resource files (in the Resources folder) represent the different translations that will be used by the localizer. The localizer is then injected into the views to render the appropriate text. Since the resource files (.resx) are xml-like, it is useful to have an IDE plugin that helps you visualize and update these files (In VS Code, you can use the ResX editor plugin)
