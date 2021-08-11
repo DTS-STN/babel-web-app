@@ -24,7 +24,10 @@ Note: If running this project locally alongside related web APIs (such as the Si
 - `docker run -it --rm -p 5000:80 babel-web-app`
 
 ### Deployment
+
 There are currently multiple deployments of the Web app in Microsoft Azure (Azure App Service). Each deployment is connected to a separate simulatione engine, which are also all deployed as Azure App Services. Deployments are set up using github actions, based on manually clicking a button. Go to the github actions, choose the workflow, and then run it.
+
+The config values (e.g. Simulation Url) are set in the Azure App Service configuration and injected as environment variables.
 
 ## Language and Accessibility
 
