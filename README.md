@@ -26,3 +26,10 @@ Note: If running this project locally alongside related web APIs (such as the Si
 ### Deployment
 There are currently multiple deployments of the Web app in Microsoft Azure (Azure App Service). Each deployment is connected to a separate simulatione engine, which are also all deployed as Azure App Services. Deployments are set up using github actions, based on manually clicking a button. Go to the github actions, choose the workflow, and then run it.
 
+## Language and Accessibility
+
+Accessibility is facilitated by following WET-BOEW and GCWeb guidelines:
+- https://wet-boew.github.io/GCWeb/index-en.html
+- https://wet-boew.github.io/GCWeb/index-en.html
+
+Bilingualism is done using .NET's built-in localization framework. Resource files (in the Resources folder) represent the different translations that will be used by the localizer. The localizer is then injected into the views to render the appropriate text. Since the resource files (.resx) are xml-like, it is useful to have an IDE plugin that helps you visualize and update these files (In VS Code, you can use the ResX editor plugin)
