@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Localization;
 
 using babel_web_app.Models;
 using babel_web_app.Lib;
@@ -12,10 +13,14 @@ namespace babel_web_app.Controllers
     public class MaternityBenefitsController : Controller
     {
         private readonly IHandleSimulationRequests _handler;
+        private readonly IHtmlLocalizer<HomeController> _localizer;
 
-        public MaternityBenefitsController(IHandleSimulationRequests handler)
+        public MaternityBenefitsController(
+            IHandleSimulationRequests handler,
+            IHtmlLocalizer<HomeController> localizer)
         {
             _handler = handler;
+            _localizer = localizer;
         }
 
         public IActionResult Index()
@@ -34,6 +39,7 @@ namespace babel_web_app.Controllers
             var name = $"Simulation_{DateTime.Now.ToString("yyyyMMddHHmm")}";
             
             var viewModel = new SimulationFormViewModel(baseCase, variantCase, name);
+            ViewBag.PageTitle = _localizer["form_title"];
             return View(viewModel);
         }
 
@@ -59,6 +65,7 @@ namespace babel_web_app.Controllers
                 var simResults = _handler.GetSimulationResults(id);
                 var resultsSummary = new ResultsSummary(simResults.Simulation, simResults.Result.PersonResults);
                 var viewModel = new ResultsViewModel(resultsSummary);
+                ViewBag.PageTitle = _localizer["results_title"];
                 return View(viewModel);
             }
             catch (Exception ex) {
@@ -69,6 +76,7 @@ namespace babel_web_app.Controllers
 
         public IActionResult Error(string message)
         {
+            ViewBag.PageTitle = _localizer["error_title"];
             return View(new ErrorViewModel() {
                 ErrorMessage = message
             });

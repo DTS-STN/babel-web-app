@@ -1,4 +1,10 @@
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@inject Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Builder.RequestLocalizationOptions> locOptions
+
+@{
+    var culture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+    var cultureCode = culture.RequestCulture.Culture;
+}
 
 <!-- Service Labs Header -->
 <div class="superHeader">
@@ -26,7 +32,7 @@
         </section>
         <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" resource="#wb-publisher" typeof="GovernmentOrganization">
             <a href="https://www.canada.ca/home.html" property="url">
-                <img src="~/GCWeb/assets/sig-blk-en.svg" alt="Government of Canada" property="logo">
+                <img src="~/GCWeb/assets/sig-blk-@(cultureCode).svg" alt="Government of Canada" property="logo">
                 <span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span>
             </a>
             <meta property="name" content="Government of Canada">
@@ -35,20 +41,17 @@
         </div>
     </div>
 </div>
-<nav aria-label="Main" class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Right side of nav -->
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="my-nav-link" asp-controller="Home" asp-action="Index">@localizer["home"]</a>
-                </li>
-                <li>
-                    <a class="my-nav-link" asp-controller="MaternityBenefits" asp-action="Index">@localizer["new_simulation"]</a>
-                </li>
-            </ul>
+
+
+<nav aria-label="Main" role="primary" class="navbar navbar-default">
+    <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+                <a class="my-nav-link" asp-controller="Home" asp-action="Index">@localizer["home"]</a>
+                <a class="my-nav-link" asp-controller="MaternityBenefits" asp-action="Index">@localizer["new_simulation"]</a>
+           </div>
         </div>
-    </div>
+    </div>    
 </nav>
 
 <nav id="wb-bc" aria-label="Breadcrumb" property="breadcrumb">

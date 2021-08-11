@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>@localizer["title"]</title>
+    <title>@(localizer["title"]) - @ViewBag.PageTitle</title>
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta name="description" content=@localizer["content"]>
     @* <link rel="alternate" hreflang="fr" href="content-fr.html"> *@
@@ -33,14 +33,14 @@
         <partial name="_Header">
     </header>
 
-    <main id="wb-cont" property="mainContentOfPage" resource="#wb-main" class="container" typeof="WebPageElement">
+    <main property="mainContentOfPage" resource="#wb-main" class="container" typeof="WebPageElement">
         <div>
             <!-- TODO: What do we think of this? -->
-            <h1>@localizer["title"]</h1>
+            <h1 id="wb-cont" property="name">@localizer["title"] - @ViewBag.PageTitle</h1>
             <p>@localizer["info"]</p>
             <details>
                 <summary>
-                    <p>@localizer["more"]</p>
+                    @localizer["more"]
                 </summary>
                 <p>@localizer["info2"]</p>
             </details>
